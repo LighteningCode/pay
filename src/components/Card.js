@@ -2,8 +2,7 @@ import React from 'react'
 
 function Card() {
     return (
-        <div style={{width: "150px", height:"80px"}} 
-        className="bg-gray-600 rounded-2xl">
+        <div style={{height:"85%"}} className="bg-gray-600 rounded-2xl w-full">
             
         </div>
     )
