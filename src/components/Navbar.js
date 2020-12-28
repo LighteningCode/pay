@@ -5,7 +5,7 @@ import bellIcon from '@iconify-icons/bi/bell';
 
 function Navbar() {
     return (
-        <nav className="flex flex-row">
+        <nav className="flex flex-row pl-5">
             <section className="mr-auto flex flex-row">
                 <figure className="mr-8">
                     <p>Pay</p>
