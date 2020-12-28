@@ -92,7 +92,7 @@ function Dashboard() {
                     <table className="w-full mt-4 flex flex-col">
                         {
                             recentTrans.map((value, idx) =>
-                                <div key={idx} className={`text-xs pb-4 mb-4 flex flex-row justify-between ${(idx !== recentTrans.length-1) ? 'border-b' : ''} border-gray-300`}>
+                                <div key={idx} className={`text-xs pb-4 mb-4 flex flex-row justify-between ${(idx !== recentTrans.length - 1) ? 'border-b' : ''} border-gray-300`}>
                                     <td className="text-base w-1/12"><InlineIcon icon={value.icon} /></td>
                                     <td className="font-bold w-4/12">{value.title}</td>
                                     <td style={{ fontSize: "11px" }} className="w-3/12 self-center text-center text-gray-500">{value.date}</td>
@@ -106,9 +106,47 @@ function Dashboard() {
 
             </div>
 
-            <div className="w-4/12">
+            <div className="w-4/12 relative flex flex-col bg-gray-100 rounded-3xl ml-5">
 
+                <div className="absolute top-0 right-0 mt-5 mr-3">
+                    <InlineIcon icon={threeDotsVertical} />
+                </div>
+
+                <div className="flex flex-col w-full mt-6 h-1/6">
+                    <h6 style={{ fontSize: "9px" }} className="text-xs self-center text-gray-500">Saved this month</h6>
+                    <h3 className="font-extrabold  self-center text-gray-800">$25,990.00</h3>
+                    <nav style={{ fontSize: "9px" }} className="flex flex-row mt-5 text-gray-400 justify-around px-10">
+                        <span className="">Day</span>
+                        <span className="">Week</span>
+                        <span className="text-gray-800 font-bold">Month</span>
+                        <span className="">Year</span>
+                    </nav>
+                </div>
+
+                <div className="h-3/6">
+
+                </div>
+
+                <div className="h-2/6 self-center align-middle flex flex-col justify-cente relative">
+                    <div style={{ width: "180px", height: "80px",zIndex:100 }} className="bg-black rounded-xl mb- flex-row flex px-3 py-2 shadow-2xl">
+                        <data className="flex flex-col justify-center text-white" style={{ fontSize: "10px" }}>
+                            <div className="w-full flex flex-col">
+                                <span className="text-center text-gray-400">Plan for 2020</span>
+                                <span className="text-center text-xs w-full self">Completed</span>
+                            </div>
+                        </data>
+                    </div>
+                    <div style={{ width: "180px", height: "80px",zIndex:99 }} className="bg-gray-500 rounded-xl absolute -mt-2 top-0 flex-row flex px-3 py-2 shadow-2xl">
+                        <data className="flex flex-col justify-center text-white" style={{ fontSize: "10px" }}>
+                            <div className="w-full flex flex-col">
+                                <span className="text-center text-gray-400">Plan for 2020</span>
+                                <span className="text-center text-xs w-full self">Completed</span>
+                            </div>
+                        </data>
+                    </div>
+                </div>
             </div>
+
         </div>
     )
 }
