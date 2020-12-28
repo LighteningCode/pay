@@ -29,7 +29,7 @@ function App() {
           <InlineIcon className={sidenav} icon={gearIcon} />
         </nav>
 
-        <div className="w-11/12 bg-white rounded-3xl mt-8 p-8">
+        <div className="w-11/12 bg-white rounded-3xl mt-8 pl-8 pr-5 py-8">
           <Dashboard />
         </div>
 
