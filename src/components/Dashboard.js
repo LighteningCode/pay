@@ -10,6 +10,7 @@ import outlineLocalLaundryService from '@iconify-icons/ic/outline-local-laundry-
 import outlineFastfood from '@iconify-icons/ic/outline-fastfood';
 import outlineDirectionsCar from '@iconify-icons/ic/outline-directions-car';
 import gymIcon from '@iconify-icons/gg/gym';
+import { Doughnut } from 'react-chartjs-2';
 
 
 import { InlineIcon } from '@iconify/react';
@@ -56,6 +57,30 @@ function Dashboard() {
             amount: "$300",
         },
     ]
+
+    const dougData = {
+        labels: ['Gym', 'Car Repairs', 'Fried Plantain'],
+        datasets: [{
+            label: 'Amount of money',
+            data: [12, 19, 3],
+            backgroundColor: [
+                'rgba(255, 255, 255, 0.8)',
+                'rgba(255, 255, 255, 0.3)',
+                'rgba(255, 255, 255, 0.1)',
+            ],
+            borderColor: [
+                'rgba(255, 255, 255, 1)',
+            ],
+            borderWidth: 1
+        }]
+    }
+
+    const dougOpt = {
+        maintainAspectRatio: false,
+        tooltips: {
+            enabled: false
+        }
+    }
 
     return (
         <div className="flex flex-row">
@@ -127,21 +152,17 @@ function Dashboard() {
 
                 </div>
 
-                <div className="h-2/6 self-center align-middle flex flex-col justify-cente relative">
-                    <div style={{ width: "180px", height: "80px",zIndex:100 }} className="bg-black rounded-xl mb- flex-row flex px-3 py-2 shadow-2xl">
-                        <data className="flex flex-col justify-center text-white" style={{ fontSize: "10px" }}>
+                <div className="h-2/6 self-center align-middle flex flex-col justify-end relative">
+                    <div style={{ width: "180px", height: "80px", zIndex: 100,boxShadow:"0px 10px 30px rgba(0, 0, 0, 0.600)" }} className="bg-black rounded-xl mb-10 flex-row flex px-3 py-2 shadow-xl">
+                        <data className="flex flex-col justify-center text-white mr-4" style={{ fontSize: "10px" }}>
                             <div className="w-full flex flex-col">
                                 <span className="text-center text-gray-400">Plan for 2020</span>
                                 <span className="text-center text-xs w-full self">Completed</span>
                             </div>
                         </data>
-                    </div>
-                    <div style={{ width: "180px", height: "80px",zIndex:99 }} className="bg-gray-500 rounded-xl absolute -mt-2 top-0 flex-row flex px-3 py-2 shadow-2xl">
-                        <data className="flex flex-col justify-center text-white" style={{ fontSize: "10px" }}>
-                            <div className="w-full flex flex-col">
-                                <span className="text-center text-gray-400">Plan for 2020</span>
-                                <span className="text-center text-xs w-full self">Completed</span>
-                            </div>
+                        <data className="flex flex-col justify-end relative">
+                            <span className="absolute top-0 left-0 text-white text-xs w-full h-full flex flex-col justify-center"><p className="self-center font-bold">75%</p></span>
+                            <Doughnut className="self-end" width={100} height={100} options={dougOpt} data={dougData} legend={false} />
                         </data>
                     </div>
                 </div>
