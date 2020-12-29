@@ -12,15 +12,15 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
 
-  const sidenav = "mb-6 self-center"
+  const sidenav = "mb-12 self-center"
 
   return (
     <main className="w-full h-full pl-0 pr-5 py-3">
       <Navbar />
 
-      <section className="flex flex-row" style={{height:"90vh"}}>
+      <section className="flex flex-row" style={{height:"100%"}}>
 
-        <nav className="w-1/12 flex flex-col pt-14 text-xl">
+        <nav className="w-1/12 flex flex-col pt-14 text-2xl">
           <InlineIcon className={sidenav} icon={houseDoorFill} />
           <InlineIcon className={sidenav} icon={envelopeOpen} />
           <InlineIcon className={sidenav} icon={chatText} />
