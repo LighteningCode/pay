@@ -8,7 +8,7 @@ function Navbar() {
         <nav className="flex flex-row pl-5">
             <section className="mr-auto flex flex-row">
                 <figure className="mr-8">
-                    <p>Pay</p>
+                    <p className="font-extrabold italic text-2xl">Pay</p>
                 </figure>
 
                 <div className="bg-white rounded-2xl px-4 pb-1 pt-1 focus:outline-none text-gray-400 flex flex-row">
