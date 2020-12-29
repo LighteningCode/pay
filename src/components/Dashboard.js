@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Card from './Card'
 import Payment from './Payment'
 import briefcaseIcon from '@iconify-icons/bi/briefcase';
@@ -10,7 +10,7 @@ import outlineLocalLaundryService from '@iconify-icons/ic/outline-local-laundry-
 import outlineFastfood from '@iconify-icons/ic/outline-fastfood';
 import outlineDirectionsCar from '@iconify-icons/ic/outline-directions-car';
 import gymIcon from '@iconify-icons/gg/gym';
-import { Doughnut } from 'react-chartjs-2';
+import { Doughnut, Line } from 'react-chartjs-2';
 
 
 import { InlineIcon } from '@iconify/react';
@@ -19,6 +19,12 @@ import { InlineIcon } from '@iconify/react';
 
 function Dashboard() {
 
+    const lineRef = useRef();
+    const ctxRef = useRef()
+    useEffect(() => {
+        ctxRef.current = lineRef.current.chartInstance.ctx;
+
+    }, [])
 
     const recentTrans = [
         {
@@ -81,7 +87,48 @@ function Dashboard() {
             enabled: false
         }
     }
+    const lineOpt = {
+        maintainAspectRatio: false,
+        tooltips: {
+            enabled: true
+        },
+        scales: {
+            yAxes: [{
+                gridLines: {
+                    display: false,
+                },
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false,
+                },
+            }],
+        },
+        aspectRatio: 2
+    }
 
+
+    const lineData = () => {
+        const ctx = ctxRef.current.canvas.getContext("2d");
+        const gradient = ctx.createLinearGradient(0, 0, 0, 205);
+        gradient.addColorStop(0, 'rgba(180,180,180,1)');
+        gradient.addColorStop(1, 'rgba(50,50,50,0)');
+        return {
+            // The data for our dataset
+            labels: ['May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov'],
+            datasets: [{
+                backgroundColor: gradient,
+                borderColor: 'rgb(80, 80, 80)',
+                pointColor: "#fff",
+                pointStrokeColor: "#ff6c23",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "#ff6c23",
+                data: [0, 10, 11, 2, 20, 19, 45],
+                lineTension: 0.2
+            }]
+
+        }
+    }
     return (
         <div className="flex flex-row">
             <div className="w-8/12 flex flex-col">
@@ -149,11 +196,11 @@ function Dashboard() {
                 </div>
 
                 <div className="h-3/6">
-
+                    <Line data={lineData} ref={lineRef} options={lineOpt} legend={false} />
                 </div>
 
                 <div className="h-2/6 self-center align-middle flex flex-col justify-end relative">
-                    <div style={{ width: "180px", height: "80px", zIndex: 100,boxShadow:"0px 10px 30px rgba(0, 0, 0, 0.600)" }} className="bg-black rounded-xl mb-10 flex-row flex px-3 py-2 shadow-xl">
+                    <div style={{ width: "180px", height: "80px", zIndex: 100, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.600)" }} className="bg-black rounded-xl mb-10 flex-row flex px-3 py-2 shadow-xl">
                         <data className="flex flex-col justify-center text-white mr-4" style={{ fontSize: "10px" }}>
                             <div className="w-full flex flex-col">
                                 <span className="text-center text-gray-400">Plan for 2020</span>
