@@ -123,10 +123,10 @@ function Dashboard() {
         }
     }
     return (
-        <div className="flex flex-row">
+        <div className="flex flex-row h-full">
             <div className="w-8/12 flex flex-col">
 
-                <div className="flex flex-row">
+                <div className="flex flex-row h-2/6">
                     <div className="w-1/2 mr-2 flex flex-col">
                         <p className="mb-2 font-bold">Dashboard</p>
                         <Card />
@@ -141,9 +141,9 @@ function Dashboard() {
                     </div>
                 </div>
 
-                <div>
+                <div className="h-4/6">
                     <nav className="flex flex-row mt-7">
-                        <p className="mr-auto font-bold">Recent transaction</p>
+                        <p className="mr-auto font-bold text-xl">Recent transaction</p>
                         <span className="flex flex-row">
                             <select className="text-xs text-gray-400 border rounded-md w-24 p-0.5 border-gray-200 mr-2">
                                 <option>Sort by</option>
@@ -157,12 +157,12 @@ function Dashboard() {
                     <table className="w-full mt-4 flex flex-col">
                         {
                             recentTrans.map((value, idx) =>
-                                <div key={idx} className={`text-xs pb-4 mb-4 flex flex-row justify-between ${(idx !== recentTrans.length - 1) ? 'border-b' : ''} border-gray-300`}>
-                                    <td className="text-base w-1/12"><InlineIcon icon={value.icon} /></td>
-                                    <td className="font-bold w-4/12">{value.title}</td>
-                                    <td style={{ fontSize: "11px" }} className="w-3/12 self-center text-center text-gray-500">{value.date}</td>
-                                    <td className="font-bold text-gray-800 text-center w-3/12">{value.amount}</td>
-                                    <td className="w-1/12"><span className="flex justify-end text-gray-400"><InlineIcon className="self-center" icon={threeDotsVertical} /></span></td>
+                                <div key={idx} style={{height:"60px"}} className={`text-base pb-5 mb-5 flex flex-row justify-between ${(idx !== recentTrans.length - 1) ? 'border-b' : ''} border-gray-300`}>
+                                    <span className="text-2xl w-1/12 text-center self-center flex flex-row justify-center"><InlineIcon icon={value.icon} /></span>
+                                    <span className="font-bold w-4/12 self-center pl-6">{value.title}</span>
+                                    <span style={{ fontSize: "13px" }} className="w-3/12 self-center text-center text-gray-500">{value.date}</span>
+                                    <span className="font-bold text-gray-800 text-center w-3/12">{value.amount}</span>
+                                    <span className="w-1/12"><span className="flex justify-end text-gray-400"><InlineIcon className="self-center" icon={threeDotsVertical} /></span></span>
                                 </div>
                             )
                         }

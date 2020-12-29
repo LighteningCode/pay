@@ -18,9 +18,9 @@ function App() {
     <main className="w-full h-full pl-0 pr-5 py-3">
       <Navbar />
 
-      <section className="flex flex-row" style={{height:"100%"}}>
+      <section className="flex flex-row" style={{height:"90vh"}}>
 
-        <nav className="w-1/12 flex flex-col pt-14">
+        <nav className="w-1/12 flex flex-col pt-14 text-xl">
           <InlineIcon className={sidenav} icon={houseDoorFill} />
           <InlineIcon className={sidenav} icon={envelopeOpen} />
           <InlineIcon className={sidenav} icon={chatText} />
