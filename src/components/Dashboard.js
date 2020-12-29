@@ -128,13 +128,13 @@ function Dashboard() {
 
                 <div className="flex flex-row h-2/6">
                     <div className="w-1/2 mr-2 flex flex-col">
-                        <p className="mb-2 font-bold">Dashboard</p>
+                        <p className="mb-7 font-bold text-xl">Dashboard</p>
                         <Card />
                     </div>
                     <div className="w-1/2">
-                        <p className="mb-2 font-bold">Upcoming payments</p>
+                        <p className="mb-7 font-bold text-xl">Upcoming payments</p>
 
-                        <div className="flex flex-row justify-around">
+                        <div className="flex flex-row justify-around h-full w-full">
                             <Payment icon={briefcaseIcon} payment="Salary" description="Belong Interactive" amount="+$2000" />
                             <Payment icon={paypalIcon} payment="Paypal" description="Freelance payment" amount="+$4800" />
                         </div>

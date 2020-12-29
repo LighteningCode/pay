@@ -4,13 +4,13 @@ import React from 'react'
 
 function Payment (props) {
     return (
-        <div className="bg-gray-100 rounded-2xl flex flex-col px-4 py-4 mx-1 h-full">
-            <span className="bg-black rounded-2xl self-center p-3 text-white text-xl mb-3">
+        <div style={{height:"80%"}} className="bg-gray-100 rounded-3xl justify-center flex flex-col px-4 pt-6 pb-6 mx-3 transition-all duration-500 w-full border-2 hover:border-black">
+            <span className="bg-black rounded-2xl self-center p-3 text-white text-3xl mb-4">
                 <InlineIcon icon={props.icon} />
             </span>
-            <h5 className="text-xs font-bold text-center mb-0.5">{props.payment}</h5>
-            <p style={{fontSize:"8px"}} className="text-xs text-center text-gray-400 font-semibold mb-0.5">{props.description}</p>
-            <p style={{fontSize:"10px"}} className="text-center font-bold">{props.amount}</p>
+            <h5 className="text-lg font-bold text-center mb-0.5">{props.payment}</h5>
+            <p style={{fontSize:"12px"}} className="text-sm text-center text-gray-400 font-semibold mb-0.5">{props.description}</p>
+            <p style={{fontSize:"15px"}} className="text-center font-bold">{props.amount}</p>
         </div>
     )
 }
