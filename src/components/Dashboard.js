@@ -103,7 +103,7 @@ function Dashboard() {
 
     const lineData = (canvas) => {
         const ctx = canvas.getContext("2d");
-        const gradient = ctx.createLinearGradient(0, 0, 0, 205);
+        const gradient = ctx.createLinearGradient(0, 0, 0, 335);
         gradient.addColorStop(0, 'rgba(180,180,180,1)');
         gradient.addColorStop(1, 'rgba(50,50,50,0)');
         return {
@@ -178,9 +178,9 @@ function Dashboard() {
                 </div>
 
                 <div className="flex flex-col w-full mt-6 h-1/6">
-                    <h6 style={{ fontSize: "9px" }} className="text-xs self-center text-gray-500">Saved this month</h6>
-                    <h3 className="font-extrabold  self-center text-gray-800">$25,990.00</h3>
-                    <nav style={{ fontSize: "9px" }} className="flex flex-row mt-5 text-gray-400 justify-around px-10">
+                    <h6 style={{ fontSize: "14px" }} className="text-sm self-center text-gray-500">Saved this month</h6>
+                    <h3 className="font-extrabold text-xl self-center text-gray-800">$25,990.00</h3>
+                    <nav style={{ fontSize: "12px" }} className="flex flex-row mt-5 text-gray-400 justify-around px-10">
                         <span className="">Day</span>
                         <span className="">Week</span>
                         <span className="text-gray-800 font-bold">Month</span>
@@ -193,11 +193,11 @@ function Dashboard() {
                 </div>
 
                 <div className="h-2/6 self-center align-middle flex flex-col justify-end relative">
-                    <div style={{ width: "180px", height: "80px", zIndex: 100, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.600)" }} className="bg-black rounded-xl mb-10 flex-row flex px-3 py-2 shadow-xl">
-                        <data className="flex flex-col justify-center text-white mr-4" style={{ fontSize: "10px" }}>
+                    <div style={{ width: "250px", height: "120px", zIndex: 100, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.600)" }} className="bg-black rounded-xl mb-10 flex-row flex px-3 py-2 shadow-xl">
+                        <data className="flex flex-col justify-center text-white mr-auto" style={{ fontSize: "16px" }}>
                             <div className="w-full flex flex-col">
-                                <span className="text-center text-gray-400">Plan for 2020</span>
-                                <span className="text-center text-xs w-full self">Completed</span>
+                                <span className="text-center text-sm text-gray-400">Plan for 2020</span>
+                                <span className="text-center w-full self">Completed</span>
                             </div>
                         </data>
                         <data className="flex flex-col justify-end relative">

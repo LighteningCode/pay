@@ -5,7 +5,7 @@ import wifiIcon from '@iconify-icons/bi/wifi';
 
 function Card() {
     return (
-        <div style={{ height: "95%" }} className="from-gray-700 px-4 py-5 text-white bg-gradient-to-tr to-gray-800 flex flex-col justify-between rounded-3xl w-full">
+        <div style={{ height: "95%" }} className="from-gray-700 px-4 py-5 text-white bg-gradient-to-tr to-gray-800 flex flex-col justify-between rounded-3xl transition-shadow duration-500 hover:shadow-xl w-full">
             <div>
                 <div className="flex flex-row mb-3">
                     <figure><img className="self-center" src="./chip.png" width="40" /></figure>
