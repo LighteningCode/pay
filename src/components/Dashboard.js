@@ -19,13 +19,6 @@ import { InlineIcon } from '@iconify/react';
 
 function Dashboard() {
 
-    const lineRef = useRef();
-    const ctxRef = useRef()
-    useEffect(() => {
-        ctxRef.current = lineRef.current.chartInstance.ctx;
-
-    }, [])
-
     const recentTrans = [
         {
             id: 53,
@@ -108,8 +101,8 @@ function Dashboard() {
     }
 
 
-    const lineData = () => {
-        const ctx = ctxRef.current.canvas.getContext("2d");
+    const lineData = (canvas) => {
+        const ctx = canvas.getContext("2d");
         const gradient = ctx.createLinearGradient(0, 0, 0, 205);
         gradient.addColorStop(0, 'rgba(180,180,180,1)');
         gradient.addColorStop(1, 'rgba(50,50,50,0)');
@@ -196,7 +189,7 @@ function Dashboard() {
                 </div>
 
                 <div className="h-3/6">
-                    <Line data={lineData} ref={lineRef} options={lineOpt} legend={false} />
+                    <Line data={lineData} options={lineOpt} legend={false} />
                 </div>
 
                 <div className="h-2/6 self-center align-middle flex flex-col justify-end relative">
