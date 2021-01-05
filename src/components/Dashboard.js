@@ -126,16 +126,19 @@ function Dashboard() {
         }
     }
     return (
-        <div className="flex flex-row h-full">
-            <div className="w-8/12 flex flex-col ">
+        <div className="flex flex-row md:flex-col h-full">
 
-                <div className="flex flex-row h-3/6 pb-20">
-                    <div className="w-1/2 mr-2 flex flex-col">
-                        <p className="mb-7 font-bold text-xl">Dashboard</p>
+            <div className="w-8/12 flex flex-col md:w-full md:h-auto ">
+
+                <div className="flex flex-row h-3/6 md:h-auto md:pb-10 pb-20 md:w-full md:flex-col">
+
+                    <div className="w-1/2 mr-2 md:w-full md:mb-6 flex flex-col">
+                        <p className="mb-7 md:mb-3 font-bold text-xl">Dashboard</p>
                         <Card />
                     </div>
-                    <div className="w-1/2">
-                        <p className="mb-7 font-bold text-xl">Upcoming payments</p>
+
+                    <div className="w-1/2 md:w-full md:mt-3">
+                        <p className="mb-7 md:mb-3 font-bold text-xl">Upcoming payments</p>
 
                         <div className="flex flex-row justify-around h-full w-full">
                             <Payment icon={briefcaseIcon} payment="Salary" description="Belong Interactive" amount="+$2000" />
@@ -144,9 +147,9 @@ function Dashboard() {
                     </div>
                 </div>
 
-                <div className="h-3/6">
-                    <nav className="flex flex-row ">
-                        <p className="mr-auto font-bold text-xl">Recent transactions</p>
+                <div className="h-3/6 md:h-auto">
+                    <nav className="flex flex-row md:mt-5">
+                        <p className="mr-auto md:text-lg font-bold text-xl">Recent transactions</p>
                         <span className="flex flex-row">
                             <select className="text-xs text-gray-400 border rounded-md w-24 p-0.5 border-gray-200 mr-2">
                                 <option>Sort by</option>
@@ -160,11 +163,11 @@ function Dashboard() {
                     <section className="w-full flex flex-col py-4">
                         {
                             recentTrans.map((value, idx) =>
-                                <div key={idx} style={{height:"60px"}} className={`text-base pb-5 mb-5 flex flex-row justify-between ${(idx !== recentTrans.length - 1) ? 'border-b' : ''} border-gray-300`}>
-                                    <span className="text-2xl w-1/12 text-center self-center flex flex-row justify-center"><InlineIcon icon={value.icon} /></span>
-                                    <span className="font-bold w-4/12 self-center pl-6">{value.title}</span>
-                                    <span style={{ fontSize: "13px" }} className="w-3/12 self-center text-center text-gray-500">{value.date}</span>
-                                    <span className="font-bold text-gray-800 text-center w-3/12">{value.amount}</span>
+                                <div key={idx} style={{height:"60px"}} className={`text-base pb-5 mb-5 md:mb-1 flex flex-row justify-between ${(idx !== recentTrans.length - 1) ? 'border-b' : ''} border-gray-300`}>
+                                    <span className="text-2xl md:text-lg w-1/12 text-center self-center flex flex-row justify-center"><InlineIcon icon={value.icon} /></span>
+                                    <span className="font-bold w-4/12 md:text-sm self-center pl-6 md:pl-2">{value.title}</span>
+                                    <span style={{ fontSize: "13px" }} className="w-3/12 md:text-xs self-center text-center text-gray-500">{value.date}</span>
+                                    <span className="font-bold md:text-sm self-center text-gray-800 text-center w-3/12">{value.amount}</span>
                                     <span className="w-1/12"><span className="flex justify-end text-gray-400"><InlineIcon className="self-center" icon={threeDotsVertical} /></span></span>
                                 </div>
                             )
@@ -174,7 +177,7 @@ function Dashboard() {
 
             </div>
 
-            <div className="w-4/12 relative flex flex-col bg-gray-100 rounded-3xl ml-5">
+            <div className="w-4/12 md:w-full md:ml-0 relative flex flex-col bg-gray-100 rounded-3xl ml-5">
 
                 <div className="absolute top-0 right-0 mt-5 mr-3">
                     <InlineIcon icon={threeDotsVertical} />
