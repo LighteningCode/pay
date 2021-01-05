@@ -15,12 +15,13 @@ function Nav({ className = "", style = {} }) {
   const sidenav = "mb-12 md:mb-0 self-center md:mr-5"
   return (
     <nav style={style} className={`${className} flex flex-col pt-14 text-2xl`}>
-      <div className="w-full flex flex-row"><InlineIcon className={sidenav} icon={houseDoorFill} /> <span className="hidden self-center md:block">Home</span></div>
-      <div className="w-full flex flex-row"><InlineIcon className={sidenav} icon={envelopeOpen} /> <span className="hidden self-center md:block">Inbox</span></div>
-      <div className="w-full flex flex-row"><InlineIcon className={sidenav} icon={chatText} /> <span className="hidden self-center md:block">Messages</span></div>
-      <div className="w-full flex flex-row"><InlineIcon className={sidenav} icon={personIcon} /> <span className="hidden self-center md:block">My account</span></div>
-      <div className="w-full flex flex-row"><InlineIcon className={sidenav} icon={cloudUpload} /> <span className="hidden self-center md:block">Recieved</span></div>
-      <div className="w-full flex flex-row"><InlineIcon className={sidenav} icon={gearIcon} /> <span className="hidden self-center md:block">Settings</span></div>
+      <div className="w-full md:flex flex-row hidden"> <span className="hidden self-center md:block font-semibold">Main Menu</span></div>
+      <div className="w-full flex flex-row md:justify-start justify-center"><InlineIcon className={sidenav} icon={houseDoorFill} /> <span className="hidden self-center md:block">Home</span></div>
+      <div className="w-full flex flex-row md:justify-start justify-center"><InlineIcon className={sidenav} icon={envelopeOpen} /> <span className="hidden self-center md:block">Inbox</span></div>
+      <div className="w-full flex flex-row md:justify-start justify-center"><InlineIcon className={sidenav} icon={chatText} /> <span className="hidden self-center md:block">Messages</span></div>
+      <div className="w-full flex flex-row md:justify-start justify-center"><InlineIcon className={sidenav} icon={personIcon} /> <span className="hidden self-center md:block">My account</span></div>
+      <div className="w-full flex flex-row md:justify-start justify-center"><InlineIcon className={sidenav} icon={cloudUpload} /> <span className="hidden self-center md:block">Recieved</span></div>
+      <div className="w-full flex flex-row md:justify-start justify-center"><InlineIcon className={sidenav} icon={gearIcon} /> <span className="hidden self-center md:block">Settings</span></div>
     </nav>
   )
 }
