@@ -540,36 +540,6 @@ video {
   width: 100%;
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
@@ -13940,26 +13910,6 @@ video {
 
 .max-w-prose {
   max-width: 65ch;
-}
-
-.max-w-screen-sm {
-  max-width: 640px;
-}
-
-.max-w-screen-md {
-  max-width: 768px;
-}
-
-.max-w-screen-lg {
-  max-width: 1024px;
-}
-
-.max-w-screen-xl {
-  max-width: 1280px;
-}
-
-.max-w-screen-2xl {
-  max-width: 1536px;
 }
 
 .min-h-0 {
@@ -29128,39 +29078,9 @@ video {
   animation: bounce 1s infinite;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 640px) {
   .sm\:container {
     width: 100%;
-  }
-
-  @media (min-width: 640px) {
-    .sm\:container {
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .sm\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .sm\:container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .sm\:container {
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .sm\:container {
-      max-width: 1536px;
-    }
   }
 
   .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
@@ -42533,26 +42453,6 @@ video {
 
   .sm\:max-w-prose {
     max-width: 65ch;
-  }
-
-  .sm\:max-w-screen-sm {
-    max-width: 640px;
-  }
-
-  .sm\:max-w-screen-md {
-    max-width: 768px;
-  }
-
-  .sm\:max-w-screen-lg {
-    max-width: 1024px;
-  }
-
-  .sm\:max-w-screen-xl {
-    max-width: 1280px;
-  }
-
-  .sm\:max-w-screen-2xl {
-    max-width: 1536px;
   }
 
   .sm\:min-h-0 {
@@ -57678,39 +57578,9 @@ video {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .md\:container {
     width: 100%;
-  }
-
-  @media (min-width: 640px) {
-    .md\:container {
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .md\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .md\:container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .md\:container {
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .md\:container {
-      max-width: 1536px;
-    }
   }
 
   .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
@@ -71083,26 +70953,6 @@ video {
 
   .md\:max-w-prose {
     max-width: 65ch;
-  }
-
-  .md\:max-w-screen-sm {
-    max-width: 640px;
-  }
-
-  .md\:max-w-screen-md {
-    max-width: 768px;
-  }
-
-  .md\:max-w-screen-lg {
-    max-width: 1024px;
-  }
-
-  .md\:max-w-screen-xl {
-    max-width: 1280px;
-  }
-
-  .md\:max-w-screen-2xl {
-    max-width: 1536px;
   }
 
   .md\:min-h-0 {
@@ -86228,39 +86078,9 @@ video {
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .lg\:container {
     width: 100%;
-  }
-
-  @media (min-width: 640px) {
-    .lg\:container {
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .lg\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .lg\:container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .lg\:container {
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .lg\:container {
-      max-width: 1536px;
-    }
   }
 
   .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
@@ -99633,26 +99453,6 @@ video {
 
   .lg\:max-w-prose {
     max-width: 65ch;
-  }
-
-  .lg\:max-w-screen-sm {
-    max-width: 640px;
-  }
-
-  .lg\:max-w-screen-md {
-    max-width: 768px;
-  }
-
-  .lg\:max-w-screen-lg {
-    max-width: 1024px;
-  }
-
-  .lg\:max-w-screen-xl {
-    max-width: 1280px;
-  }
-
-  .lg\:max-w-screen-2xl {
-    max-width: 1536px;
   }
 
   .lg\:min-h-0 {
@@ -114778,39 +114578,9 @@ video {
   }
 }
 
-@media (min-width: 1280px) {
+@media (max-width: 1280px) {
   .xl\:container {
     width: 100%;
-  }
-
-  @media (min-width: 640px) {
-    .xl\:container {
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .xl\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .xl\:container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .xl\:container {
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .xl\:container {
-      max-width: 1536px;
-    }
   }
 
   .xl\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
@@ -128183,26 +127953,6 @@ video {
 
   .xl\:max-w-prose {
     max-width: 65ch;
-  }
-
-  .xl\:max-w-screen-sm {
-    max-width: 640px;
-  }
-
-  .xl\:max-w-screen-md {
-    max-width: 768px;
-  }
-
-  .xl\:max-w-screen-lg {
-    max-width: 1024px;
-  }
-
-  .xl\:max-w-screen-xl {
-    max-width: 1280px;
-  }
-
-  .xl\:max-w-screen-2xl {
-    max-width: 1536px;
   }
 
   .xl\:min-h-0 {
@@ -143328,39 +143078,9 @@ video {
   }
 }
 
-@media (min-width: 1536px) {
+@media (max-width: 1536px) {
   .\32xl\:container {
     width: 100%;
-  }
-
-  @media (min-width: 640px) {
-    .\32xl\:container {
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .\32xl\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .\32xl\:container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .\32xl\:container {
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .\32xl\:container {
-      max-width: 1536px;
-    }
   }
 
   .\32xl\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
@@ -156733,26 +156453,6 @@ video {
 
   .\32xl\:max-w-prose {
     max-width: 65ch;
-  }
-
-  .\32xl\:max-w-screen-sm {
-    max-width: 640px;
-  }
-
-  .\32xl\:max-w-screen-md {
-    max-width: 768px;
-  }
-
-  .\32xl\:max-w-screen-lg {
-    max-width: 1024px;
-  }
-
-  .\32xl\:max-w-screen-xl {
-    max-width: 1280px;
-  }
-
-  .\32xl\:max-w-screen-2xl {
-    max-width: 1536px;
   }
 
   .\32xl\:min-h-0 {

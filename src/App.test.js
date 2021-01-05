@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 describe("App", () => {
-    it("Should not test", () => {
-
+    xit("Should not test", () => {
+        
     })
 })
