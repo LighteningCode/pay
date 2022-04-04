@@ -3,7 +3,7 @@
 ![Pay](./public/pay.jpg)
 
 
-# Here is a link to my build (Desktop only)
+# Here is a link to my build (Web, Responsive)
 [Pay built by Elvis](https://pay-0.herokuapp.com/)
 
 
