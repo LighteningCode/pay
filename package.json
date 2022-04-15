@@ -23,12 +23,12 @@
     "react-chartjs-2": "^2.11.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "redux": "^4.1.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "npm run watch:css && react-scripts start",
+    "start": "npm run watch:css && react-scripts start",
     "build": "npm run watch:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
