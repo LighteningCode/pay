@@ -30,11 +30,13 @@ function Navbar({openModal}) {
             </section>
 
             <section className="flex flex-row justify-end w-auto md:w-2/6">
-                <select style={{fontSize:"10px"}} className="text-sm bg-transparent self-center mr-1">
+                <select style={{fontSize:"14px"}} className="text-sm bg-transparent outline-none ring-gray-700 focus:ring py-2 px-3 self-center mr-1">
                     <option>EN</option>
+                    <option>FR</option>
+                    <option>GR</option>
                 </select>
                 <div className="flex flex-row self-center md:mr-2 mr-10">
-                    <InlineIcon icon={bellIcon} />
+                    <InlineIcon icon={bellIcon} className="h-6 w-6" />
                 </div>
                 <figure className="self-center">
                     <img src="./me.jpg" className="rounded-full" width="30" />

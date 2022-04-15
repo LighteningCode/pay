@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.5.0",
     "@iconify-icons/bi": "^1.1.0",
     "@iconify-icons/gg": "^1.1.0",
     "@iconify-icons/ic": "^1.1.1",

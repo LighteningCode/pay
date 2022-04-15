@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Card from './Card'
 import Payment from './Payment'
 import briefcaseIcon from '@iconify-icons/bi/briefcase';
@@ -11,9 +11,48 @@ import outlineFastfood from '@iconify-icons/ic/outline-fastfood';
 import outlineDirectionsCar from '@iconify-icons/ic/outline-directions-car';
 import gymIcon from '@iconify-icons/gg/gym';
 import { Doughnut, Line } from 'react-chartjs-2';
-
-
 import { InlineIcon } from '@iconify/react';
+import { Menu } from '@headlessui/react'
+
+
+
+function TransactionItem({ title, date, amount, icon, showBottomBorder }) {
+
+    const menuItems = ["Apple Pay", "Transfer to Account", "Report Item"]
+
+    function MenuDropDown() {
+        return (
+            <Menu as="div" className="relative text-left flex justify-end">
+                <Menu.Button className={"outline-none"}><span className=" z-40 text-gray-400 hover:text-black"><InlineIcon className="self-center w-5 h-5" icon={threeDotsVertical} /></span></Menu.Button>
+                <Menu.Items className={"absolute z-50 flex flex-col border-white right-0 rounded-xl w-56 mt-2 origin-top-right bg-white shadow-lg ring-1 ring-black  ring-opacity-5 focus:outline-none"}>
+                    {
+                        menuItems.map((data,idx) =>
+                            <Menu.Item>
+                                {({ active }) => (
+                                    <button
+                                        className={`${active ? 'bg-white text-gray-800' : "bg-black text-white"} ${idx === 0 && "rounded-t-xl"} ${idx === menuItems.length - 1 && "rounded-b-xl"} ${idx !== menuItems.length - 1 && "border-b border-white"} pl-4 pr-2 py-4 font-thin text-left`}
+                                    >
+                                        {data}
+                                    </button>
+                                )}
+                            </Menu.Item>
+                        )
+                    }
+                </Menu.Items>
+            </Menu>
+        )
+    }
+
+    return (
+        <div style={{ height: "60px" }} className={`text-base pb-5 mb-5 md:mb-1 flex flex-row justify-between ${(showBottomBorder) ? 'border-b' : ''} border-gray-300`}>
+            <span className="text-2xl md:text-lg w-1/12 text-center self-center flex flex-row justify-center"><InlineIcon icon={icon} /></span>
+            <span className="font-bold w-4/12 md:text-sm self-center pl-6 md:pl-2">{title}</span>
+            <span style={{ fontSize: "13px" }} className="w-3/12 md:text-lg self-center text-center text-gray-500">{date}</span>
+            <span className="font-bold md:text-sm self-center text-gray-800 text-center w-3/12">{amount}</span>
+            <span className="w-1/12 self-center"><MenuDropDown /></span>
+        </div>
+    )
+}
 
 
 
@@ -87,7 +126,7 @@ function Dashboard() {
         },
         scales: {
             yAxes: [{
-                scaleLabel:{
+                scaleLabel: {
                     display: false,
                 },
                 gridLines: {
@@ -125,6 +164,7 @@ function Dashboard() {
 
         }
     }
+
     return (
         <div className="flex flex-row md:flex-col h-full">
 
@@ -151,7 +191,7 @@ function Dashboard() {
                     <nav className="flex flex-row md:mt-5">
                         <p className="mr-auto md:text-lg font-bold text-xl">Recent transactions</p>
                         <span className="flex flex-row">
-                            <select className="text-xs text-gray-400 border rounded-md w-24 p-0.5 border-gray-200 mr-2">
+                            <select className="text-xs text-gray-400 border rounded-md w-24 py-0.5 px-1 focus:ring ring-gray-700 outline-none  border-gray-200 mr-2">
                                 <option>Sort by</option>
                             </select>
                             <div className="self-center">
@@ -163,13 +203,7 @@ function Dashboard() {
                     <section className="w-full flex flex-col py-4">
                         {
                             recentTrans.map((value, idx) =>
-                                <div key={idx} style={{height:"60px"}} className={`text-base pb-5 mb-5 md:mb-1 flex flex-row justify-between ${(idx !== recentTrans.length - 1) ? 'border-b' : ''} border-gray-300`}>
-                                    <span className="text-2xl md:text-lg w-1/12 text-center self-center flex flex-row justify-center"><InlineIcon icon={value.icon} /></span>
-                                    <span className="font-bold w-4/12 md:text-sm self-center pl-6 md:pl-2">{value.title}</span>
-                                    <span style={{ fontSize: "13px" }} className="w-3/12 md:text-xs self-center text-center text-gray-500">{value.date}</span>
-                                    <span className="font-bold md:text-sm self-center text-gray-800 text-center w-3/12">{value.amount}</span>
-                                    <span className="w-1/12"><span className="flex justify-end text-gray-400"><InlineIcon className="self-center" icon={threeDotsVertical} /></span></span>
-                                </div>
+                                <TransactionItem key={idx} {...value} idx={idx} showBottomBorder={idx !== recentTrans.length - 1} />
                             )
                         }
                     </section>
